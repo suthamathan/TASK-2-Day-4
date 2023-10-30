@@ -1,0 +1,496 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red39\green40\blue50;}
+{\*\expandedcolortbl;;\cssrgb\c20392\c20784\c25490;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11820\viewh8700\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\
+\
+\
+      												JAVA  OOPS\
+\
+PROGRAM 1\
+\
+\
+\
+public class Person \{\
+    private String name;\
+    private int age;\
+\
+    public Person(String name, int age) \{\
+        this.name = name;\
+        this.age = age;\
+    \}\
+\
+    public String getName() \{\
+        return name;\
+    \}\
+\
+    public int getAge() \{\
+        return age;\
+    \}\
+\
+    public static void main(String[] args) \{\
+        // Creating a Person object\
+        Person person = new Person("John Doe", 30);\
+\
+        // Accessing attributes using getter methods\
+        System.out.println("Name: " + person.getName());\
+        System.out.println("Age: " + person.getAge());\
+    \}\
+\}\
+\
+\
+OUTPUT \
+\
+Name: John Doe\
+Age: 30\
+____________________________________________________________________________________________________________________________________________________________________________________________________________________\
+\
+PROGRAM 2\
+\
+\
+public class Employee \{\
+    private int id;\
+    private String firstName;\
+    private String lastName;\
+    private int salary;\
+\
+    public Employee(int id, String firstName, String lastName, int salary) \{\
+        this.id = id;\
+        this.firstName = firstName;\
+        this.lastName = lastName;\
+        this.salary = salary;\
+    \}\
+\
+    public int getID() \{\
+        return id;\
+    \}\
+\
+    public String getFirstName() \{\
+        return firstName;\
+    \}\
+\
+    public String getLastName() \{\
+        return lastName;\
+    \}\
+\
+    public int getSalary() \{\
+        return salary;\
+    \}\
+\
+    public void setSalary(int salary) \{\
+        this.salary = salary;\
+    \}\
+\
+    public int getAnnualSalary() \{\
+        return salary * 12;\
+    \}\
+\
+    public int raiseSalary(int percent) \{\
+        double increase = (double) percent / 100;\
+        salary += (int) (salary * increase);\
+        return salary;\
+    \}\
+\
+    @Override\
+    public String toString() \{\
+        return "Employee[id=" + id + ", name=" + firstName + " " + lastName + ", salary=" + salary + "]";\
+    \}\
+\
+    public static void main(String[] args) \{\
+        Employee employee = new Employee(1, "John", "Doe", 50000);\
+\
+        System.out.println("Original Information:");\
+        System.out.println(employee);\
+\
+        System.out.println("Annual Salary: " + employee.getAnnualSalary());\
+\
+        employee.raiseSalary(10); // Increase salary by 10%\
+        System.out.println("After Salary Increase:");\
+        System.out.println(employee);\
+    \}\
+\}\
+\
+OUTPUT\
+\
+Original Information:\
+Employee[id=1, name=John Doe, salary=50000]\
+Annual Salary: 600000\
+After Salary Increase:\
+Employee[id=1, name=John Doe, salary=55000]\
+______________________________________________________________________________________________________________________________________________________________________________________________________________\
+\
+PROGRAM 3\
+\
+public class Circle \{\
+    private double radius;\
+\
+    // No-argument constructor\
+    public Circle() \{\
+        this.radius = 1.0; // Default radius\
+    \}\
+\
+    // Two-argument constructor\
+    public Circle(double radius) \{\
+        this.radius = radius;\
+    \}\
+\
+    public double getRadius() \{\
+        return radius;\
+    \}\
+\
+    public void setRadius(double radius) \{\
+        this.radius = radius;\
+    \}\
+\
+    public double calculateCircumference() \{\
+        return 2 * Math.PI * radius;\
+    \}\
+\
+    public static void main(String[] args) \{\
+        // Create Circle objects using both constructors\
+        Circle circle1 = new Circle();\
+        Circle circle2 = new Circle(5.0);\
+\
+        // Display the radius and circumference\
+        System.out.println("Circle 1: Radius = " + circle1.getRadius());\
+        System.out.println("Circle 1: Circumference = " + circle1.calculateCircumference());\
+\
+        System.out.println("Circle 2: Radius = " + circle2.getRadius());\
+        System.out.println("Circle 2: Circumference = " + circle2.calculateCircumference());\
+    \}\
+\}\
+\
+\
+OUTPUT\
+\
+Circle 1: Radius = 1.0Circle 1: Circumference = 6.283185307179586\
+Circle 2: Radius = 5.0\
+Circle 2: Circumference = 31.41592653589793\
+\
+______________________________________________________________________________________________________________________________________________________________________________________________________________\
+  \
+\
+PROGRAM 4\
+\
+\
+\
+public class Account \{\
+    private double balance;\
+\
+    // No-argument constructor\
+    public Account() \{\
+        this.balance = 0.0;\
+    \}\
+\
+    // Two-argument constructor\
+    public Account(double initialBalance) \{\
+        this.balance = initialBalance;\
+    \}\
+\
+    // Method to deposit funds\
+    public void deposit(double amount) \{\
+        if (amount > 0) \{\
+            balance += amount;\
+            System.out.println("Deposited: $" + amount);\
+        \} else \{\
+            System.out.println("Invalid deposit amount");\
+        \}\
+    \}\
+\
+    // Method to withdraw funds\
+    public void withdraw(double amount) \{\
+        if (amount > 0 && amount <= balance) \{\
+            balance -= amount;\
+            System.out.println("Withdrawn: $" + amount);\
+        \} else \{\
+            System.out.println("Invalid withdrawal amount or insufficient balance");\
+        \}\
+    \}\
+\
+    // Method to get the current balance\
+    public double getBalance() \{\
+        return balance;\
+    \}\
+\
+    public static void main(String[] args) \{\
+        // Creating an account with a balance of $1000\
+        Account account1 = new Account(1000.0);\
+\
+        // Depositing and withdrawing from the account\
+        account1.deposit(500.0);\
+        account1.withdraw(200.0);\
+        account1.withdraw(1500.0); // This should fail due to insufficient balance\
+\
+        // Get the current balance\
+        System.out.println("Current balance: $" + account1.getBalance());\
+    \}\
+\}\
+\
+\
+OUTPUT\
+\
+\
+Deposited: $500.0Withdrawn: $200.0Invalid withdrawal amount or insufficient balanceCurrent balance: $1300.0\
+______________________________________________________________________________________________________________________________________________________________________________________________________________\
+PROGRAM 5\
+\
+\
+public class Tea \{\
+    private boolean hotWater;\
+    private boolean teaLeaves;\
+    private boolean milk;\
+    private boolean sugar;\
+\
+    public Tea() \{\
+        // Initialize the tea with no ingredients\
+        hotWater = false;\
+        teaLeaves = false;\
+        milk = false;\
+        sugar = false;\
+    \}\
+\
+    public void prepareTea() \{\
+        hotWater = true;\
+        teaLeaves = true;\
+        System.out.println("Basic tea is prepared with hot water and tea leaves.");\
+    \}\
+\
+    public void addMilk() \{\
+        if (hotWater && teaLeaves) \{\
+            milk = true;\
+            System.out.println("Milk is added to the tea.");\
+        \} else \{\
+            System.out.println("Cannot add milk without preparing the basic tea first.");\
+        \}\
+    \}\
+\
+    public void addSugar() \{\
+        if (hotWater && teaLeaves) \{\
+            sugar = true;\
+            System.out.println("Sugar is added to the tea.");\
+        \} else \{\
+            System.out.println("Cannot add sugar without preparing the basic tea first.");\
+        \}\
+    \}\
+\
+    public void serveTea() \{\
+        if (hotWater && teaLeaves && milk && sugar) \{\
+            System.out.println("Tea is ready to be served!");\
+        \} else \{\
+            System.out.println("Tea is not ready yet. Please prepare and add all ingredients.");\
+        \}\
+    \}\
+\
+    public static void main(String[] args) \{\
+        Tea myTea = new Tea();\
+\
+        myTea.prepareTea();\
+        myTea.addMilk();\
+        myTea.addSugar();\
+        myTea.serveTea();\
+    \}\
+\}\
+\
+OUTPUT \
+Basic tea is prepared with hot water and tea leaves.\
+Milk is added to the tea.Sugar is added to the tea.\
+Tea is ready to be served!\
+\
+______________________________________________________________________________________________________________________________________________________________________________________________________________\
+PROGRAM 5 \
+TEA \
+\
+class Tea \{\
+    public void boilWater() \{\
+        System.out.println("Boiling water...");\
+    \}\
+\
+    public void steepTeaBag(int minutes) \{\
+        System.out.println("Steeping the tea bag for " + minutes + " minutes...");\
+    \}\
+\
+    public void pourInCup() \{\
+        System.out.println("Pouring the tea into a cup...");\
+    \}\
+\
+    public void addCondiments(String condiments) \{\
+        System.out.println("Adding " + condiments + "...");\
+    \}\
+\
+    public void prepareTea() \{\
+        boilWater();\
+        steepTeaBag(3); // Default steeping time\
+        pourInCup();\
+        addCondiments("lemon and honey"); // Default condiments\
+    \}\
+\}\
+\
+class BlackTea extends Tea \{\
+    @Override\
+    public void steepTeaBag(int minutes) \{\
+        System.out.println("Steeping the black tea bag for " + minutes + " minutes...");\
+    \}\
+\}\
+\
+class GreenTea extends Tea \{\
+    @Override\
+    public void steepTeaBag(int minutes) \{\
+        System.out.println("Steeping the green tea bag for " + minutes + " minutes...");\
+    \}\
+\}\
+\
+class HerbalTea extends Tea \{\
+    @Override\
+    public void addCondiments(String condiments) \{\
+        System.out.println("Adding " + condiments + " and mint...");\
+    \}\
+\}\
+\
+public class TeaDemo \{\
+    public static void main(String[] args) \{\
+        Tea blackTea = new BlackTea();\
+        Tea greenTea = new GreenTea();\
+        Tea herbalTea = new HerbalTea();\
+\
+        System.out.println("Preparing Black Tea:");\
+        blackTea.prepareTea();\
+\
+        System.out.println("\\nPreparing Green Tea:");\
+        greenTea.prepareTea();\
+\
+        System.out.println("\\nPreparing Herbal Tea:");\
+        herbalTea.prepareTea();\
+    \}\
+\}\
+ \
+\
+OUTPUT\
+\
+Preparing Black Tea:\
+Boiling water...\
+Steeping the black tea bag for 3 minutes...\
+Pouring the tea into a cup...\
+Adding lemon and honey...\
+\
+Preparing Green Tea:\
+Boiling water...\
+Steeping the green tea bag for 3 minutes...\
+Pouring the tea into a cup...\
+Adding lemon and honey...\
+\
+Preparing Herbal Tea:\
+Boiling water...\
+Steeping the tea bag for 3 minutes...\
+Pouring the tea into a cup...\
+Adding lemon and honey and mint...\
+______________________________________________________________________________________________________________________________________________________________________________________________________________\
+PROGRAM 6 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 public class Tea \{\
+    private String type;\
+\
+    public Tea(String type) \{\
+        this.type = type;\
+    \}\
+\
+    public void boilWater() \{\
+        System.out.println("Boiling water...");\
+    \}\
+\
+    public void steepTeaBag() \{\
+        System.out.println("Steeping the " + type + " tea bag...");\
+    \}\
+\
+    public void pourInCup() \{\
+        System.out.println("Pouring the " + type + " tea into a cup...");\
+    \}\
+\
+    public void addCondiments() \{\
+        System.out.println("Adding lemon and honey...");\
+    \}\
+\
+    public void prepareTea() \{\
+        boilWater();\
+        steepTeaBag();\
+        pourInCup();\
+        addCondiments();\
+    \}\
+\}\
+\
+public class BlackTea extends Tea \{\
+    public BlackTea() \{\
+        super("Black");\
+    \}\
+\
+    @Override\
+    public void steepTeaBag() \{\
+        System.out.println("Steeping the black tea bag for 3 minutes...");\
+    \}\
+\}\
+\
+public class GreenTea extends Tea \{\
+    public GreenTea() \{\
+        super("Green");\
+    \}\
+\
+    @Override\
+    public void steepTeaBag() \{\
+        System.out.println("Steeping the green tea bag for 2 minutes...");\
+    \}\
+\}\
+\
+public class HerbalTea extends Tea \{\
+    public HerbalTea() \{\
+        super("Herbal");\
+    \}\
+\
+    @Override\
+    public void addCondiments() \{\
+        System.out.println("Adding honey and mint...");\
+    \}\
+\}\
+\
+public class Main \{\
+    public static void main(String[] args) \{\
+        Tea[] teas = new Tea[3];\
+        teas[0] = new BlackTea();\
+        teas[1] = new GreenTea();\
+        teas[2] = new HerbalTea();\
+\
+        for (Tea tea : teas) \{\
+            System.out.println("Preparing " + tea.getClass().getSimpleName() + ":");\
+            tea.prepareTea();\
+            System.out.println();\
+        \}\
+    \}\
+\}\
+\
+OUTPUT \
+Preparing BlackTea:\
+Boiling water...\
+Steeping the black tea bag for 3 minutes...\
+Pouring the Black tea into a cup...\
+Adding lemon and honey...\
+\
+Preparing GreenTea:\
+Boiling water...\
+Steeping the green tea bag for 2 minutes...\
+Pouring the Green tea into a cup...\
+Adding lemon and honey...\
+\
+Preparing HerbalTea:\
+Boiling water...\
+Steeping the Herbal tea bag...\
+Pouring the Herbal tea into a cup...\
+Adding honey and mint...\
+
+\f0\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+	}
