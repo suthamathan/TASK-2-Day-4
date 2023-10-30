@@ -1,0 +1,258 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 PALINDROME\
+\
+class Main \{\
+  public static void main(String[] args) \{\
+\
+    String str = "Radar", reverseStr = "";\
+    \
+    int strLength = str.length();\
+\
+    for (int i = (strLength - 1); i >=0; --i) \{\
+      reverseStr = reverseStr + str.charAt(i);\
+    \}\
+\
+    if (str.toLowerCase().equals(reverseStr.toLowerCase())) \{\
+      System.out.println(str + " is a Palindrome String.");\
+    \}\
+    else \{\
+      System.out.println(str + " is not a Palindrome String.");\
+    \}\
+  \}\
+\}\
+\
+OUTPUT\
+Radar is a Palindrome String.\
+\
+___________________________________________________________________________________________________________________________________________________________________________________________________________________\
+PROGRAM 2 \
+REVERSE A STRING \
+\
+\
+import java.util.Scanner;\
+\
+public class ReverseString \{\
+    public static void main(String[] args) \{\
+        Scanner scanner = new Scanner(System.in);\
+\
+        System.out.print("Enter a string: ");\
+        String input = scanner.nextLine();\
+        scanner.close();\
+\
+        // Initialize an empty string to store the reversed string\
+        String reversed = "";\
+\
+        // Iterate in reverse through the characters of the input string\
+        for (int i = input.length() - 1; i >= 0; i--) \{\
+            reversed += input.charAt(i);\
+        \}\
+\
+        // Print the reversed string\
+        System.out.println("Reversed string: " + reversed);\
+    \}\
+\}\
+\
+OUTPUT \
+\
+Enter a string: HELLO\
+Reversed string: OLLEH\
+\
+___________________________________________________________________________________________________________________________________________________________________________________________________________________\
+\
+\
+\
+PROGRAM 3\
+PRINT PATTERN\
+\
+\
+import java.util.Scanner;\
+\
+public class Pattern \{\
+    public static void main(String[] args) \{\
+        Scanner scanner = new Scanner(System.in);\
+        int n = scanner.nextInt();\
+        scanner.close();\
+        \
+        int num = 1;\
+        \
+        for (int i = 1; i <= n; i++) \{\
+            for (int j = 1; j <= i; j++) \{\
+                System.out.print(num + " ");\
+                num++;\
+            \}\
+            System.out.println();\
+        \}\
+    \}\
+\}\
+\
+\
+OUTPUT\
+\
+4\
+1 \
+2 3 \
+4 5 6 \
+7 8 9 10 \
+____________________________________________________________________________________________________________________________________________________________________________________________________________________\
+PROGRAM 4 \
+PATTERN \
+ \
+\
+import java.util.Scanner;\
+\
+public class PatternExample \{\
+    public static void main(String[] args) \{\
+        Scanner scanner = new Scanner(System.in);\
+        System.out.print("Enter the number of rows: ");\
+        int n = scanner.nextInt();\
+\
+        for (int i = 1; i <= n; i++) \{\
+            for (int j = 1; j <= n; j++) \{\
+                if (i == j || i + j == n + 1) \{\
+                    System.out.print("*");\
+                \} else \{\
+                    System.out.print(" ");\
+                \}\
+            \}\
+            System.out.println();\
+        \}\
+    \}\
+\}\
+OUTPUT ;\
+Enter the number of rows: 5\
+*  *\
+ * * \
+  *  \
+ ** \
+*   *\
+____________________________________________________________________________________________________________________________________________________________________________________________________________________\
+PROGRAM 5\
+ANNA UNIVERSITY\
+\
+\
+public class GradingSystem \{\
+    public static void main(String[] args) \{\
+        Scanner scanner = new Scanner(System.in);\
+\
+        System.out.print("Enter the student's marks: ");\
+        int marks = scanner.nextInt();\
+        \
+        if (marks < 0 || marks > 100) \{\
+            System.out.println("Invalid Input");\
+        \} else \{\
+            String grade;\
+            if (marks >= 90 && marks <= 100) \{\
+                grade = "A";\
+            \} else if (marks >= 80 && marks <= 89) \{\
+                grade = "B";\
+            \} else if (marks >= 70 && marks <= 79) \{\
+                grade = "C";\
+            \} else if (marks >= 60 && marks <= 69) \{\
+                grade = "D";\
+            \} else if (marks >= 50 && marks <= 59) \{\
+                grade = "E";\
+            \} else \{\
+                grade = "F";\
+            \}\
+\
+            System.out.println("Grade: " + grade);\
+        \}\
+    \}\
+\}\
+OUTPUT \
+\
+Enter the student's marks: 78\
+Grade: C\
+\
+____________________________________________________________________________________________________________________________________________________________________________________________________________________\
+PROGRAM 6\
+TARRIF \
+\
+\
+import java.util.Scanner;\
+\
+public class HotelTariffCalculator \{\
+    public static void main(String[] args) \{\
+        Scanner scanner = new Scanner(System.in);\
+\
+        // Input: Month, Room Rent per Day, and Number of Days\
+        int month = scanner.nextInt();\
+        double roomRentPerDay = scanner.nextDouble();\
+        int daysStayed = scanner.nextInt();\
+\
+        scanner.close();\
+\
+        // Determine if it's a peak season\
+        boolean isPeakSeason = (month >= 4 && month <= 6) || (month >= 11 && month <= 12);\
+\
+        // Calculate the hotel tariff\
+        double totalTariff;\
+\
+        if (isPeakSeason) \{\
+            totalTariff = roomRentPerDay * daysStayed * 1.2; // 20% higher during peak season\
+        \} else \{\
+            totalTariff = roomRentPerDay * daysStayed;\
+        \}\
+\
+        // Print the hotel tariff with 2 decimal places\
+        System.out.printf("%.2f%n", totalTariff);\
+    \}\
+\}\
+\
+\
+INPUT\
+3 \
+1500\
+2\
+OUTPUT \
+3000.00\
+____________________________________________________________________________________________________________________________________________________________________________________________________________________\
+PROGRAM 7 \
+\
+\
+LARGEST NUMBER\
+\
+public class LargestNumber \{\
+    public static void main(String[] args) \{\
+        Scanner scanner = new Scanner(System.in);\
+\
+        System.out.print("Enter the first number: ");\
+        double num1 = scanner.nextDouble();\
+\
+        System.out.print("Enter the second number: ");\
+        double num2 = scanner.nextDouble();\
+\
+        System.out.print("Enter the third number: ");\
+        double num3 = scanner.nextDouble();\
+\
+        scanner.close();\
+\
+        double largest;\
+\
+        if (num1 >= num2 && num1 >= num3) \{\
+            largest = num1;\
+        \} else if (num2 >= num1 && num2 >= num3) \{\
+            largest = num2;\
+        \} else \{\
+            largest = num3;\
+        \}\
+\
+        System.out.println("The largest number is: " + largest);\
+    \}\
+\}\
+ \
+OUTPUT \
+\
+Enter the first number: 3\
+Enter the second number: 5\
+Enter the third number: 8\
+The largest number is: 8.0\
+____________________________________________________________________________________________________________________________________________________________________________________________________________________\
+                            \
+}
